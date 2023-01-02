@@ -1,5 +1,7 @@
 ## AOP
 
+[TOC]
+
 ### 注解方式实现aop
 
 1. 导入aop相关依赖  
@@ -244,3 +246,21 @@ public class UserConfig {
 }
 ```
 
+### 事务管理器
+
+1. 在业务层接口上加上`@Transactional`注解
+
+2. 配置类
+
+   ```java
+   @Bean
+   public PlatformTransactionManager platformTransactionManager(DataSource dataSource) {
+       DataSourceTransactionManager dst = new DataSourceTransactionManager();
+       dst.setDataSource(dataSource);
+       return dst;
+   }
+   ```
+
+   
+
+3. 注解 在配置类上加上`@EnableTransactionManagement`注解
