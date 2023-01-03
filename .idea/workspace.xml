@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="215cdff6-367f-469a-8eeb-1dade9be798a" name="Changes" comment="事务">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/config/SpringMvcConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="215cdff6-367f-469a-8eeb-1dade9be798a" name="Changes" comment="事务文档完善">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/results/Code.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/results/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/pojo/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/results/Code.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/results/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a3f94705-9073-46af-8f52-5c0d9210ba20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a3f94705-9073-46af-8f52-5c0d9210ba20.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/springmvc/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +25,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -93,7 +95,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "D:/JAVA/SSM/annotationMode/src/main/webapp",
+    "last_opened_file_path": "D:/JAVA/SSM/annotationMode/src/main/java/com/springmvc",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -121,6 +123,7 @@
       <recent name="D:\JAVA\SSM\annotationMode\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.springmvc.pojo" />
       <recent name="com.qimu" />
       <recent name="com.qimu.config" />
     </key>
@@ -138,6 +141,9 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="generated-requests | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$APPLICATION_CONFIG_DIR$/scratches/generated-requests.http" index="3" requestIdentifier="#3" runType="Run single request">
+      <method v="2" />
     </configuration>
     <configuration name="App2.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="annotationMode" />
@@ -213,6 +219,7 @@
     </configuration>
     <list>
       <item itemvalue="Application.App" />
+      <item itemvalue="HTTP Request.generated-requests | #3" />
       <item itemvalue="JUnit.App2.test" />
       <item itemvalue="JUnit.TestUrl" />
       <item itemvalue="JUnit.TestUrl.testUrl" />
@@ -220,6 +227,7 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.generated-requests | #3" />
         <item itemvalue="JUnit.TestUrl.testUrl" />
         <item itemvalue="JUnit.App2.test" />
         <item itemvalue="JUnit.TestUrl" />
@@ -237,7 +245,7 @@
       <updated>1672580430061</updated>
       <workItem from="1672580431399" duration="6158000" />
       <workItem from="1672659433228" duration="12925000" />
-      <workItem from="1672748194683" duration="14000" />
+      <workItem from="1672748194683" duration="5226000" />
     </task>
     <task id="LOCAL-00001" summary="aop注解">
       <created>1672665036617</created>
@@ -274,7 +282,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672668932019</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="事务文档完善">
+      <created>1672748255132</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1672748255132</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +313,7 @@
     </ignored-roots>
     <MESSAGE value="aop注解" />
     <MESSAGE value="事务" />
-    <option name="LAST_COMMIT_MESSAGE" value="事务" />
+    <MESSAGE value="事务文档完善" />
+    <option name="LAST_COMMIT_MESSAGE" value="事务文档完善" />
   </component>
 </project>

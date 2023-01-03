@@ -2,6 +2,198 @@
 
 [TOC]
 
+## 数据返回结果统一处理
+
+![image-20230103211759955](https://img2023.cnblogs.com/blog/2923613/202301/2923613-20230103211812714-20207968.png)
+
+![image-20230103211820824](https://img2023.cnblogs.com/blog/2923613/202301/2923613-20230103211833193-255092865.png)
+
+![image-20230103211858060](https://img2023.cnblogs.com/blog/2923613/202301/2923613-20230103211910445-250889069.png)
+
+```java
+/**
+ * 返回工具类
+ */
+public class ResultUtils {
+
+    /**
+     * 成功
+     *
+     * @param data
+     * @param <T>
+     * @return
+     */
+    public static <T> BaseResponse<T> success(T data) {
+        return new BaseResponse<>(0, data, "ok");
+    }
+
+    /**
+     * 失败
+     *
+     * @param errorCode
+     * @return
+     */
+    public static BaseResponse error(ErrorCode errorCode) {
+        return new BaseResponse<>(errorCode);
+    }
+
+    /**
+     * 失败
+     *
+     * @param code
+     * @param message
+     * @return
+     */
+    public static BaseResponse error(int code, String message) {
+        return new BaseResponse(code, null, message);
+    }
+
+    /**
+     * 失败
+     *
+     * @param errorCode
+     * @return
+     */
+    public static BaseResponse error(ErrorCode errorCode, String message) {
+        return new BaseResponse(errorCode.getCode(), null, message);
+    }
+}
+```
+
+```java
+import java.io.Serializable;
+import lombok.Data;
+
+/**
+ * 通用返回类
+ *
+ * @param <T>
+ */
+@Data
+public class BaseResponse<T> implements Serializable {
+
+    private int code;
+
+    private T data;
+
+    private String message;
+
+    public BaseResponse(int code, T data, String message) {
+        this.code = code;
+        this.data = data;
+        this.message = message;
+    }
+
+    public BaseResponse(int code, T data) {
+        this(code, data, "");
+    }
+
+    public BaseResponse(ErrorCode errorCode) {
+        this(errorCode.getCode(), null, errorCode.getMessage());
+    }
+}
+```
+
+## 异常处理器
+
+![image-20230103212912152](https://img2023.cnblogs.com/blog/2923613/202301/2923613-20230103212924536-1282831147.png)
+
+![image-20230103212944438](https://img2023.cnblogs.com/blog/2923613/202301/2923613-20230103212956796-130362154.png)
+
+```java
+/**
+ * 全局异常处理器
+ */
+@RestControllerAdvice
+@Slf4j
+public class GlobalExceptionHandler {
+
+    @ExceptionHandler(BusinessException.class)
+    public BaseResponse<?> businessExceptionHandler(BusinessException e) {
+        log.error("businessException: " + e.getMessage(), e);
+        return ResultUtils.error(e.getCode(), e.getMessage());
+    }
+
+    @ExceptionHandler(RuntimeException.class)
+    public BaseResponse<?> runtimeExceptionHandler(RuntimeException e) {
+        log.error("runtimeException", e);
+        return ResultUtils.error(ErrorCode.SYSTEM_ERROR, e.getMessage());
+    }
+}
+```
+
+```java
+/**
+ * 自定义异常类
+ */
+public class BusinessException extends RuntimeException {
+
+    private final int code;
+
+    public BusinessException(int code, String message) {
+        super(message);
+        this.code = code;
+    }
+
+    public BusinessException(ErrorCode errorCode) {
+        super(errorCode.getMessage());
+        this.code = errorCode.getCode();
+    }
+
+    public BusinessException(ErrorCode errorCode, String message) {
+        super(message);
+        this.code = errorCode.getCode();
+    }
+
+    public int getCode() {
+        return code;
+    }
+}
+```
+
+```java
+/**
+ * 错误码
+ */
+public enum ErrorCode {
+
+    SUCCESS(0, "ok"),
+    PARAMS_ERROR(40000, "请求参数错误"),
+    NOT_LOGIN_ERROR(40100, "未登录"),
+    NO_AUTH_ERROR(40101, "无权限"),
+    NOT_FOUND_ERROR(40400, "请求数据不存在"),
+    FORBIDDEN_ERROR(40300, "禁止访问"),
+    SYSTEM_ERROR(50000, "系统内部异常"),
+    OPERATION_ERROR(50001, "操作失败");
+
+    /**
+     * 状态码
+     */
+    private final int code;
+
+    /**
+     * 信息
+     */
+    private final String message;
+
+    ErrorCode(int code, String message) {
+        this.code = code;
+        this.message = message;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+}
+```
+
+
+
 ### 注解方式实现aop
 
 1. 导入aop相关依赖  
