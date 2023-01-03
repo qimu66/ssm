@@ -264,3 +264,50 @@ public class UserConfig {
    
 
 3. 注解 在配置类上加上`@EnableTransactionManagement`注解
+
+## SpringMvc
+
+配置类
+
+```java
+package com.springmvc.config;
+
+import org.springframework.web.context.WebApplicationContext;
+import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
+
+public class WebConfig extends AbstractDispatcherServletInitializer {
+    //加载springmvc容器配置
+    @Override
+    protected WebApplicationContext createServletApplicationContext() {
+        AnnotationConfigWebApplicationContext acwc = new AnnotationConfigWebApplicationContext();
+        acwc.register(SpringMvcConfig.class);
+        return acwc;
+    }
+     //设置那些请求归属springmvc
+    @Override
+    protected String[] getServletMappings() {
+        return new String[]{"/"};
+    }
+    //加载spring容器配置
+    @Override
+    protected WebApplicationContext createRootApplicationContext() {
+        return null;
+    }
+}
+
+```
+
+```java
+package com.springmvc.config;
+
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
+
+@Configuration
+@ComponentScan("com.springmvc")
+public class SpringMvcConfig {
+}
+```
+

@@ -4,11 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="215cdff6-367f-469a-8eeb-1dade9be798a" name="Changes" comment="aop注解">
+    <list default="true" id="215cdff6-367f-469a-8eeb-1dade9be798a" name="Changes" comment="事务">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/config/SpringMvcConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/springmvc/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/caseOne/service/UrlService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/caseOne/service/UrlService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qimu/config/JdbcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qimu/config/JdbcConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/qimu/config/UserConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/qimu/config/UserConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -27,6 +32,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
     <option name="recentBranches">
       <RecentBranches>
         <option name="branchesForRepo">
@@ -86,16 +92,17 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/JAVA/SSM/annotationMode/src/main/java/com/caseOne",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "D:/JAVA/SSM/annotationMode/src/main/webapp",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "spring.configuration.checksum": "16bce6018852ab6addc4e9b9b0f9c608"
   },
   "keyToStringList": {
@@ -109,6 +116,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JAVA\SSM\annotationMode\src\main\java\com\springmvc" />
       <recent name="D:\JAVA\SSM\annotationMode\src\main\java\com\caseOne" />
       <recent name="D:\JAVA\SSM\annotationMode\src\main\resources" />
     </key>
@@ -117,7 +125,7 @@
       <recent name="com.qimu.config" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestUrl.testUrl">
+  <component name="RunManager" selected="Maven.annotationMode [tomcat7:run]">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.qimu.App" />
       <module name="annotationMode" />
@@ -178,6 +186,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="annotationMode [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="JUnit.App2.test" />
+      <item itemvalue="JUnit.TestUrl" />
+      <item itemvalue="JUnit.TestUrl.testUrl" />
+      <item itemvalue="Maven.annotationMode [tomcat7:run]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.TestUrl.testUrl" />
@@ -196,7 +236,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672580430061</updated>
       <workItem from="1672580431399" duration="6158000" />
-      <workItem from="1672659433228" duration="9074000" />
+      <workItem from="1672659433228" duration="12925000" />
+      <workItem from="1672748194683" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="aop注解">
       <created>1672665036617</created>
@@ -226,7 +267,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672666989496</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="事务">
+      <created>1672668932019</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672668932019</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -245,7 +293,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/PaintingMall" />
+    </ignored-roots>
     <MESSAGE value="aop注解" />
-    <option name="LAST_COMMIT_MESSAGE" value="aop注解" />
+    <MESSAGE value="事务" />
+    <option name="LAST_COMMIT_MESSAGE" value="事务" />
   </component>
 </project>
